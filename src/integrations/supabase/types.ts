@@ -14,6 +14,104 @@ export type Database = {
   }
   public: {
     Tables: {
+      booking_services: {
+        Row: {
+          created_at: string
+          description: string | null
+          duration_minutes: number
+          id: string
+          is_active: boolean | null
+          max_participants: number | null
+          name: string
+          price: number
+          settings: Json | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          duration_minutes: number
+          id?: string
+          is_active?: boolean | null
+          max_participants?: number | null
+          name: string
+          price: number
+          settings?: Json | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          duration_minutes?: number
+          id?: string
+          is_active?: boolean | null
+          max_participants?: number | null
+          name?: string
+          price?: number
+          settings?: Json | null
+        }
+        Relationships: []
+      }
+      bookings: {
+        Row: {
+          created_at: string
+          customer_email: string
+          customer_name: string
+          customer_phone: string | null
+          id: string
+          participant_count: number | null
+          payment_status: string | null
+          scheduled_date: string
+          scheduled_time: string
+          service_id: string | null
+          special_requests: string | null
+          status: string | null
+          stripe_session_id: string | null
+          total_amount: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          customer_email: string
+          customer_name: string
+          customer_phone?: string | null
+          id?: string
+          participant_count?: number | null
+          payment_status?: string | null
+          scheduled_date: string
+          scheduled_time: string
+          service_id?: string | null
+          special_requests?: string | null
+          status?: string | null
+          stripe_session_id?: string | null
+          total_amount: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          customer_email?: string
+          customer_name?: string
+          customer_phone?: string | null
+          id?: string
+          participant_count?: number | null
+          payment_status?: string | null
+          scheduled_date?: string
+          scheduled_time?: string
+          service_id?: string | null
+          special_requests?: string | null
+          status?: string | null
+          stripe_session_id?: string | null
+          total_amount?: number
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bookings_service_id_fkey"
+            columns: ["service_id"]
+            isOneToOne: false
+            referencedRelation: "booking_services"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       contact_submissions: {
         Row: {
           admin_notes: string | null
@@ -47,6 +145,96 @@ export type Database = {
         }
         Relationships: []
       }
+      digital_products: {
+        Row: {
+          created_at: string
+          description: string | null
+          download_limit: number | null
+          file_path: string
+          file_size: number | null
+          id: string
+          is_active: boolean | null
+          is_free: boolean | null
+          name: string
+          price: number | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          download_limit?: number | null
+          file_path: string
+          file_size?: number | null
+          id?: string
+          is_active?: boolean | null
+          is_free?: boolean | null
+          name: string
+          price?: number | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          download_limit?: number | null
+          file_path?: string
+          file_size?: number | null
+          id?: string
+          is_active?: boolean | null
+          is_free?: boolean | null
+          name?: string
+          price?: number | null
+        }
+        Relationships: []
+      }
+      download_links: {
+        Row: {
+          created_at: string
+          digital_product_id: string | null
+          download_count: number | null
+          expires_at: string
+          id: string
+          is_active: boolean | null
+          max_downloads: number | null
+          resource_download_id: string | null
+          secure_token: string
+        }
+        Insert: {
+          created_at?: string
+          digital_product_id?: string | null
+          download_count?: number | null
+          expires_at: string
+          id?: string
+          is_active?: boolean | null
+          max_downloads?: number | null
+          resource_download_id?: string | null
+          secure_token: string
+        }
+        Update: {
+          created_at?: string
+          digital_product_id?: string | null
+          download_count?: number | null
+          expires_at?: string
+          id?: string
+          is_active?: boolean | null
+          max_downloads?: number | null
+          resource_download_id?: string | null
+          secure_token?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "download_links_digital_product_id_fkey"
+            columns: ["digital_product_id"]
+            isOneToOne: false
+            referencedRelation: "digital_products"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "download_links_resource_download_id_fkey"
+            columns: ["resource_download_id"]
+            isOneToOne: false
+            referencedRelation: "resource_downloads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       email_subscriptions: {
         Row: {
           email: string
@@ -74,6 +262,45 @@ export type Database = {
           preferences?: Json | null
           source?: string | null
           subscribed_at?: string
+        }
+        Relationships: []
+      }
+      newsletter_campaigns: {
+        Row: {
+          click_rate: number | null
+          content: string
+          created_at: string
+          id: string
+          open_rate: number | null
+          recipient_count: number | null
+          scheduled_date: string | null
+          sent_date: string | null
+          status: string | null
+          title: string
+        }
+        Insert: {
+          click_rate?: number | null
+          content: string
+          created_at?: string
+          id?: string
+          open_rate?: number | null
+          recipient_count?: number | null
+          scheduled_date?: string | null
+          sent_date?: string | null
+          status?: string | null
+          title: string
+        }
+        Update: {
+          click_rate?: number | null
+          content?: string
+          created_at?: string
+          id?: string
+          open_rate?: number | null
+          recipient_count?: number | null
+          scheduled_date?: string | null
+          sent_date?: string | null
+          status?: string | null
+          title?: string
         }
         Relationships: []
       }

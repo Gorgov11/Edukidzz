@@ -17,9 +17,15 @@ export const useEmailActions = () => {
       if (error) throw error;
 
       trackEvent('newsletter_signup', 'engagement', source);
+      
+      // Send welcome email automatically
+      await supabase.functions.invoke('welcome-email', {
+        body: { email, name, source }
+      });
+      
       toast({
         title: "Success!",
-        description: "You've been subscribed to our newsletter.",
+        description: "You've been subscribed! Check your email for welcome gifts.",
       });
       return { success: true };
     } catch (error: any) {

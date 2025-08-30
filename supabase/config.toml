@@ -8,3 +8,9 @@ verify_jwt = false
 
 [functions.free-resources]
 verify_jwt = false
+
+[functions.secure-download]
+verify_jwt = false
+
+[functions.welcome-email]
+verify_jwt = false
