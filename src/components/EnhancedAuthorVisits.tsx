@@ -15,7 +15,6 @@ const EnhancedAuthorVisits = () => {
       name: 'School Author Visit',
       description: 'Interactive storytelling session for schools with reading activities and Q&A',
       duration: '60 minutes',
-      price: '$150',
       maxParticipants: '30 students',
       highlights: ['Interactive storytelling', 'Reading activities', 'Q&A session', 'Book signing'],
       ageRange: 'Ages 4-12',
@@ -26,7 +25,6 @@ const EnhancedAuthorVisits = () => {
       name: 'Nursery Story Session',
       description: 'Age-appropriate storytelling for nursery children with props and activities',
       duration: '45 minutes',
-      price: '$100',
       maxParticipants: '20 children',
       highlights: ['Story props', 'Action songs', 'Creative activities', 'Parent engagement'],
       ageRange: 'Ages 2-5',
@@ -37,7 +35,6 @@ const EnhancedAuthorVisits = () => {
       name: 'Library Event',
       description: 'Public library storytelling event with craft activities',
       duration: '90 minutes',
-      price: '$200',
       maxParticipants: '25 families',
       highlights: ['Public storytelling', 'Craft workshop', 'Family activities', 'Book sales'],
       ageRange: 'All ages',
@@ -48,7 +45,6 @@ const EnhancedAuthorVisits = () => {
       name: 'Morning Play Hub',
       description: 'Educational play session for ages 2-5 with parent participation',
       duration: '2 hours',
-      price: '$75',
       maxParticipants: '8 children + parents',
       highlights: ['STEAM activities', 'Sensory play', 'Early phonics', 'Parent guidance'],
       ageRange: 'Ages 2-5',
@@ -59,7 +55,6 @@ const EnhancedAuthorVisits = () => {
       name: 'Private Group Session',
       description: 'Customized storytelling session for private groups',
       duration: '60 minutes',
-      price: '$125',
       maxParticipants: '15 children',
       highlights: ['Customized content', 'Flexible timing', 'Special themes', 'Personal attention'],
       ageRange: 'Any age',
@@ -119,8 +114,8 @@ const EnhancedAuthorVisits = () => {
                     <CardTitle className="text-xl mb-2">{service.name}</CardTitle>
                     <CardDescription className="text-base">{service.description}</CardDescription>
                   </div>
-                  <Badge variant="secondary" className="text-lg font-bold">
-                    {service.price}
+                  <Badge variant="outline" className="text-sm font-medium">
+                    Upon Request
                   </Badge>
                 </div>
               </CardHeader>

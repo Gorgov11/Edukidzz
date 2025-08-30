@@ -15,7 +15,6 @@ interface BookingService {
   name: string;
   description: string;
   duration_minutes: number;
-  price: number;
   max_participants: number;
 }
 
@@ -51,7 +50,7 @@ const BookingSystem = () => {
         .from('booking_services')
         .select('*')
         .eq('is_active', true)
-        .order('price', { ascending: true });
+        .order('name', { ascending: true });
 
       if (error) {
         console.error('Error fetching services:', error);
@@ -92,9 +91,7 @@ const BookingSystem = () => {
     setIsLoading(true);
 
     try {
-      const totalAmount = selectedService.price * formData.participant_count;
-
-      // Create booking record
+      // Create booking inquiry record
       const { data: booking, error: bookingError } = await supabase
         .from('bookings')
         .insert({
@@ -105,10 +102,10 @@ const BookingSystem = () => {
           scheduled_date: formData.scheduled_date,
           scheduled_time: formData.scheduled_time,
           participant_count: formData.participant_count,
-          total_amount: totalAmount,
+          total_amount: 0,
           special_requests: formData.special_requests,
-          status: 'pending',
-          payment_status: 'pending'
+          status: 'inquiry',
+          payment_status: 'not_required'
         })
         .select()
         .single();
@@ -117,13 +114,11 @@ const BookingSystem = () => {
         throw bookingError;
       }
 
-      trackEvent('booking_created', 'engagement', selectedService.name);
+      trackEvent('booking_inquiry_created', 'engagement', selectedService.name);
 
-      // Here you would integrate with Stripe for payment
-      // For now, we'll show a success message
       toast({
-        title: "Booking Created!",
-        description: `Your booking for ${selectedService.name} has been created. You'll receive a confirmation email shortly.`,
+        title: "Inquiry Submitted!",
+        description: `Your inquiry for ${selectedService.name} has been submitted. I'll contact you within 24 hours to discuss details and pricing.`,
       });
 
       // Reset form
@@ -142,7 +137,7 @@ const BookingSystem = () => {
       console.error('Booking error:', error);
       toast({
         title: "Error",
-        description: "Failed to create booking. Please try again.",
+        description: "Failed to submit inquiry. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -176,8 +171,8 @@ const BookingSystem = () => {
                     Up to {service.max_participants} participants
                   </div>
                   <div className="flex items-center justify-between">
-                    <Badge variant="secondary" className="text-lg font-bold">
-                      ${service.price}
+                    <Badge variant="outline" className="text-sm font-medium">
+                      Upon Request
                     </Badge>
                     <Button variant="outline" size="sm">
                       Select Service
@@ -207,12 +202,11 @@ const BookingSystem = () => {
                   <span>{selectedService.duration_minutes} minutes</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Price per person:</span>
-                  <span>${selectedService.price}</span>
+                  <span>Pricing:</span>
+                  <span>Upon Request</span>
                 </div>
-                <div className="flex justify-between font-semibold text-lg">
-                  <span>Total:</span>
-                  <span>${(selectedService.price * formData.participant_count).toFixed(2)}</span>
+                <div className="text-sm text-muted-foreground mt-2">
+                  I'll contact you within 24 hours to discuss pricing and availability.
                 </div>
               </div>
             </CardContent>
@@ -312,11 +306,11 @@ const BookingSystem = () => {
                 </div>
 
                 <Button type="submit" className="btn-hero w-full" disabled={isLoading}>
-                  {isLoading ? 'Creating Booking...' : 'Book & Pay Now'}
+                  {isLoading ? 'Submitting Inquiry...' : 'Submit Inquiry'}
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center">
-                  You'll be redirected to secure payment processing. A confirmation email will be sent after payment.
+                  I'll contact you within 24 hours to discuss details and pricing.
                 </p>
               </form>
             </CardContent>
