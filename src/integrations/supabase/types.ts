@@ -14,7 +14,96 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_submissions: {
+        Row: {
+          admin_notes: string | null
+          email: string
+          id: string
+          message: string
+          name: string
+          status: string | null
+          subject: string
+          submitted_at: string
+        }
+        Insert: {
+          admin_notes?: string | null
+          email: string
+          id?: string
+          message: string
+          name: string
+          status?: string | null
+          subject: string
+          submitted_at?: string
+        }
+        Update: {
+          admin_notes?: string | null
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          status?: string | null
+          subject?: string
+          submitted_at?: string
+        }
+        Relationships: []
+      }
+      email_subscriptions: {
+        Row: {
+          email: string
+          id: string
+          is_active: boolean | null
+          name: string | null
+          preferences: Json | null
+          source: string | null
+          subscribed_at: string
+        }
+        Insert: {
+          email: string
+          id?: string
+          is_active?: boolean | null
+          name?: string | null
+          preferences?: Json | null
+          source?: string | null
+          subscribed_at?: string
+        }
+        Update: {
+          email?: string
+          id?: string
+          is_active?: boolean | null
+          name?: string | null
+          preferences?: Json | null
+          source?: string | null
+          subscribed_at?: string
+        }
+        Relationships: []
+      }
+      resource_downloads: {
+        Row: {
+          download_url: string | null
+          downloaded_at: string
+          email: string
+          email_sent: boolean | null
+          id: string
+          resource_name: string
+        }
+        Insert: {
+          download_url?: string | null
+          downloaded_at?: string
+          email: string
+          email_sent?: boolean | null
+          id?: string
+          resource_name: string
+        }
+        Update: {
+          download_url?: string | null
+          downloaded_at?: string
+          email?: string
+          email_sent?: boolean | null
+          id?: string
+          resource_name?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
