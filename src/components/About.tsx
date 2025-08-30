@@ -98,9 +98,11 @@ const About = () => {
               </div>
             </div>
 
-            <Button className="btn-hero w-full sm:w-auto">
-              Read My Full Journey
-            </Button>
+            <a href="#contact">
+              <Button className="btn-hero w-full sm:w-auto">
+                Read My Full Journey
+              </Button>
+            </a>
           </div>
         </div>
 

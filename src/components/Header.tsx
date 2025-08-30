@@ -24,16 +24,18 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#books" className="text-foreground hover:text-primary transition-colors">Books</a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-            <a href="#visits" className="text-foreground hover:text-primary transition-colors">Author Visits</a>
-            <a href="#resources" className="text-foreground hover:text-primary transition-colors">Free Resources</a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
+            <a href="#books" className="text-foreground hover:text-primary transition-colors scroll-smooth">Books</a>
+            <a href="#about" className="text-foreground hover:text-primary transition-colors scroll-smooth">About</a>
+            <a href="#visits" className="text-foreground hover:text-primary transition-colors scroll-smooth">Author Visits</a>
+            <a href="#resources" className="text-foreground hover:text-primary transition-colors scroll-smooth">Free Resources</a>
+            <a href="#contact" className="text-foreground hover:text-primary transition-colors scroll-smooth">Contact</a>
           </nav>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="btn-hero">Book a Visit</Button>
+            <a href="#visits">
+              <Button className="btn-hero">Book a Visit</Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -54,7 +56,9 @@ const Header = () => {
               <a href="#visits" className="text-foreground hover:text-primary transition-colors" onClick={toggleMenu}>Author Visits</a>
               <a href="#resources" className="text-foreground hover:text-primary transition-colors" onClick={toggleMenu}>Free Resources</a>
               <a href="#contact" className="text-foreground hover:text-primary transition-colors" onClick={toggleMenu}>Contact</a>
-              <Button className="btn-hero w-full mt-4">Book a Visit</Button>
+              <a href="#visits" onClick={toggleMenu}>
+                <Button className="btn-hero w-full mt-4">Book a Visit</Button>
+              </a>
             </nav>
           </div>
         )}

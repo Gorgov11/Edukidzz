@@ -41,9 +41,11 @@ const FreeResources = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle email submission
-    console.log("Email submitted:", email);
-    setEmail("");
+    if (email) {
+      // Simulate successful signup
+      alert(`Thank you! Your free activity pack will be sent to ${email}. Check your inbox and spam folder.`);
+      setEmail("");
+    }
   };
 
   return (

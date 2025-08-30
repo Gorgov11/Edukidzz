@@ -53,14 +53,18 @@ const Books = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button className="btn-hero flex-1">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Order Now
-              </Button>
-              <Button variant="outline" className="flex-1 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                <Download className="w-4 h-4 mr-2" />
-                Free Activities
-              </Button>
+              <a href="https://www.amazon.ae/Billy-Bears-Brown-Hair-Nasr/dp/1915641446" target="_blank" rel="noopener noreferrer" className="flex-1">
+                <Button className="btn-hero w-full">
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Order Now
+                </Button>
+              </a>
+              <a href="#resources" className="flex-1">
+                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                  <Download className="w-4 h-4 mr-2" />
+                  Free Activities
+                </Button>
+              </a>
             </div>
 
             {/* Billy Bear Purchase Links */}
@@ -122,14 +126,18 @@ const Books = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button className="btn-accent flex-1">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Buy Now
-              </Button>
-              <Button variant="outline" className="flex-1 border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-                <Download className="w-4 h-4 mr-2" />
-                Explore Activities
-              </Button>
+              <a href="https://www.amazon.com/Spark-Sparkly-Dragon-Dina-Nasr/dp/9948790626" target="_blank" rel="noopener noreferrer" className="flex-1">
+                <Button className="btn-accent w-full">
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Buy Now
+                </Button>
+              </a>
+              <a href="#resources" className="flex-1">
+                <Button variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground">
+                  <Download className="w-4 h-4 mr-2" />
+                  Explore Activities
+                </Button>
+              </a>
             </div>
 
             {/* Spark Dragon Purchase Links */}

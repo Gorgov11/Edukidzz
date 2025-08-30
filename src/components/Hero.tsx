@@ -39,15 +39,21 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button className="btn-hero text-lg px-8 py-4">
-                Explore My Books
-              </Button>
-              <Button className="btn-secondary text-lg px-8 py-4">
-                Book an Author Visit
-              </Button>
-              <Button variant="outline" className="text-lg px-8 py-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                Free Activities
-              </Button>
+              <a href="#books">
+                <Button className="btn-hero text-lg px-8 py-4">
+                  Explore My Books
+                </Button>
+              </a>
+              <a href="#visits">
+                <Button className="btn-secondary text-lg px-8 py-4">
+                  Book an Author Visit
+                </Button>
+              </a>
+              <a href="#resources">
+                <Button variant="outline" className="text-lg px-8 py-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                  Free Activities
+                </Button>
+              </a>
             </div>
           </div>
           
@@ -71,20 +77,22 @@ const Hero = () => {
               </div>
               
               {/* Book Preview */}
-              <div className="card-primary bg-background/80 backdrop-blur-sm">
-                <div className="flex items-center gap-4">
-                  <img 
-                    src={sparkDragon} 
-                    alt="Spark the Sparkly Dragon" 
-                    className="w-16 h-16 rounded-lg object-cover"
-                  />
-                  <div>
-                    <p className="text-sm text-muted-foreground">Latest Book</p>
-                    <h4 className="font-semibold text-foreground">Spark the Sparkly Dragon</h4>
-                    <p className="text-sm text-secondary font-medium">Available Now</p>
+              <a href="#books">
+                <div className="card-primary bg-background/80 backdrop-blur-sm cursor-pointer hover:scale-105 transition-transform">
+                  <div className="flex items-center gap-4">
+                    <img 
+                      src={sparkDragon} 
+                      alt="Spark the Sparkly Dragon" 
+                      className="w-16 h-16 rounded-lg object-cover"
+                    />
+                    <div>
+                      <p className="text-sm text-muted-foreground">Latest Book</p>
+                      <h4 className="font-semibold text-foreground">Spark the Sparkly Dragon</h4>
+                      <p className="text-sm text-secondary font-medium">Available Now</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
             
             {/* Background decoration */}

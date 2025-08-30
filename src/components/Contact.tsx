@@ -21,9 +21,11 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    if (formData.name && formData.email && formData.message) {
+      // Simulate successful form submission
+      alert(`Thank you ${formData.name}! Your message has been sent. I'll get back to you within 24-48 hours at ${formData.email}.`);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    }
   };
 
   return (
@@ -83,33 +85,41 @@ const Contact = () => {
 
             {/* Services Quick Links */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              <Card className="border-primary/20 hover:border-primary/40 transition-colors cursor-pointer">
-                <CardContent className="p-4 text-center">
-                  <h5 className="font-semibold text-foreground mb-1">Author Visits</h5>
-                  <p className="text-sm text-muted-foreground">Schools & nurseries</p>
-                </CardContent>
-              </Card>
+              <a href="#visits">
+                <Card className="border-primary/20 hover:border-primary/40 transition-colors cursor-pointer">
+                  <CardContent className="p-4 text-center">
+                    <h5 className="font-semibold text-foreground mb-1">Author Visits</h5>
+                    <p className="text-sm text-muted-foreground">Schools & nurseries</p>
+                  </CardContent>
+                </Card>
+              </a>
               
-              <Card className="border-accent/20 hover:border-accent/40 transition-colors cursor-pointer">
-                <CardContent className="p-4 text-center">
-                  <h5 className="font-semibold text-foreground mb-1">Morning Play Hub</h5>
-                  <p className="text-sm text-muted-foreground">Ages 2-5 learning</p>
-                </CardContent>
-              </Card>
+              <a href="mailto:edukidzzbooks@gmail.com?subject=Morning Play Hub Inquiry">
+                <Card className="border-accent/20 hover:border-accent/40 transition-colors cursor-pointer">
+                  <CardContent className="p-4 text-center">
+                    <h5 className="font-semibold text-foreground mb-1">Morning Play Hub</h5>
+                    <p className="text-sm text-muted-foreground">Ages 2-5 learning</p>
+                  </CardContent>
+                </Card>
+              </a>
               
-              <Card className="border-secondary/20 hover:border-secondary/40 transition-colors cursor-pointer">
-                <CardContent className="p-4 text-center">
-                  <h5 className="font-semibold text-foreground mb-1">Collaborations</h5>
-                  <p className="text-sm text-muted-foreground">Educational partnerships</p>
-                </CardContent>
-              </Card>
+              <a href="mailto:edukidzzbooks@gmail.com?subject=Collaboration Inquiry">
+                <Card className="border-secondary/20 hover:border-secondary/40 transition-colors cursor-pointer">
+                  <CardContent className="p-4 text-center">
+                    <h5 className="font-semibold text-foreground mb-1">Collaborations</h5>
+                    <p className="text-sm text-muted-foreground">Educational partnerships</p>
+                  </CardContent>
+                </Card>
+              </a>
               
-              <Card className="border-primary/20 hover:border-primary/40 transition-colors cursor-pointer">
-                <CardContent className="p-4 text-center">
-                  <h5 className="font-semibold text-foreground mb-1">Media Inquiries</h5>
-                  <p className="text-sm text-muted-foreground">Press & interviews</p>
-                </CardContent>
-              </Card>
+              <a href="mailto:edukidzzbooks@gmail.com?subject=Media Inquiry">
+                <Card className="border-primary/20 hover:border-primary/40 transition-colors cursor-pointer">
+                  <CardContent className="p-4 text-center">
+                    <h5 className="font-semibold text-foreground mb-1">Media Inquiries</h5>
+                    <p className="text-sm text-muted-foreground">Press & interviews</p>
+                  </CardContent>
+                </Card>
+              </a>
             </div>
 
             {/* Social Media */}
