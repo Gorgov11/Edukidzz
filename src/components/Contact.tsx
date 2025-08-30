@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, MessageSquare, Phone, MapPin, Instagram, Linkedin, Facebook } from "lucide-react";
 import { useState } from "react";
+import { useEmailActions } from "@/hooks/useEmailActions";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,17 +15,20 @@ const Contact = () => {
     message: ""
   });
 
+  const { submitContactForm, isSubmitting } = useEmailActions();
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.message) {
-      // Simulate successful form submission
-      alert(`Thank you ${formData.name}! Your message has been sent. I'll get back to you within 24-48 hours at ${formData.email}.`);
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      const result = await submitContactForm(formData);
+      if (result.success) {
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      }
     }
   };
 
@@ -218,9 +222,9 @@ const Contact = () => {
                     />
                   </div>
                   
-                  <Button type="submit" className="btn-hero w-full text-lg py-3">
+                  <Button type="submit" className="btn-hero w-full text-lg py-3" disabled={isSubmitting}>
                     <Mail className="w-5 h-5 mr-2" />
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                   
                   <p className="text-xs text-muted-foreground text-center">

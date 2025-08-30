@@ -4,9 +4,13 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Download, Gift, BookOpen, Palette, Puzzle, Music, Mail } from "lucide-react";
 import { useState } from "react";
+import { useEmailActions } from "@/hooks/useEmailActions";
 
 const FreeResources = () => {
   const [email, setEmail] = useState("");
+  const [selectedResource, setSelectedResource] = useState<string>("");
+
+  const { requestFreeResource, subscribeToNewsletter, isSubmitting } = useEmailActions();
 
   const resources = [
     {
@@ -39,12 +43,33 @@ const FreeResources = () => {
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      // Simulate successful signup
-      alert(`Thank you! Your free activity pack will be sent to ${email}. Check your inbox and spam folder.`);
+  const handleResourceRequest = async (resourceName: string) => {
+    if (!email) {
+      return;
+    }
+    
+    const result = await requestFreeResource(email, resourceName);
+    
+    if (result.success) {
       setEmail("");
+      setSelectedResource("");
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) {
+      return;
+    }
+    
+    if (selectedResource) {
+      await handleResourceRequest(selectedResource);
+    } else {
+      // General newsletter signup
+      const result = await subscribeToNewsletter(email, "", "free_resources");
+      if (result.success) {
+        setEmail("");
+      }
     }
   };
 
@@ -86,10 +111,21 @@ const FreeResources = () => {
                       ))}
                     </ul>
                   </div>
-                  <Badge variant="outline" className="w-full justify-center py-2">
-                    <Download className="w-4 h-4 mr-2" />
-                    Free Download
-                  </Badge>
+                  <div className="space-y-2">
+                    <Badge variant="outline" className="w-full justify-center py-2">
+                      <Download className="w-4 h-4 mr-2" />
+                      Free Download
+                    </Badge>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="w-full"
+                      onClick={() => setSelectedResource(resource.title)}
+                      disabled={isSubmitting}
+                    >
+                      Select This Resource
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             );
@@ -122,9 +158,10 @@ const FreeResources = () => {
                   required
                   className="flex-1"
                 />
-                <Button type="submit" className="btn-secondary px-8">
+                <Button type="submit" className="btn-secondary px-8" disabled={isSubmitting}>
                   <Download className="w-4 h-4 mr-2" />
-                  Get Free Pack
+                  {selectedResource ? `Get ${selectedResource}` : "Get Free Pack"}
+                  {isSubmitting && " - Sending..."}
                 </Button>
               </div>
               <p className="text-xs text-muted-foreground text-center">

@@ -1,1 +1,10 @@
 project_id = "vgiaryswrjuyczgfbany"
+
+[functions.newsletter-signup]
+verify_jwt = false
+
+[functions.contact-form]
+verify_jwt = false
+
+[functions.free-resources]
+verify_jwt = false
