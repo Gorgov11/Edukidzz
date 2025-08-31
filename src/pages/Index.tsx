@@ -9,6 +9,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  // Main page component
   return (
     <div className="min-h-screen">
       <Header />
