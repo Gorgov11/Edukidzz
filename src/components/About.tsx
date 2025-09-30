@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Heart, Users, Globe, Award, BookOpen } from "lucide-react";
-import dinaPhoto from "@/assets/dina-author-photo.jpg";
+import dinaPhotoAlt from "@/assets/author-photos/dina-author-photo-alt.jpg";
 
 const About = () => {
   return (
@@ -21,7 +21,7 @@ const About = () => {
           <div>
             <div className="relative mb-8">
               <img 
-                src={dinaPhoto} 
+                src={dinaPhotoAlt} 
                 alt="Dina O. Nasr, Children's Author and Educator" 
                 className="w-full max-w-md mx-auto lg:max-w-none rounded-2xl shadow-card object-cover"
               />
@@ -98,7 +98,7 @@ const About = () => {
               </div>
             </div>
 
-            <a href="#contact">
+            <a href="/#contact">
               <Button className="btn-hero w-full sm:w-auto">
                 Read My Full Journey
               </Button>

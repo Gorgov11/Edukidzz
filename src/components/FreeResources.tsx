@@ -5,6 +5,16 @@ import { Badge } from "@/components/ui/badge";
 import { Download, Gift, BookOpen, Palette, Puzzle, Music, Mail } from "lucide-react";
 import { useState } from "react";
 import { useEmailActions } from "@/hooks/useEmailActions";
+import { getAllActivities } from "@/lib/imageMapping";
+
+// Import activity images
+import sparkColoring from "@/assets/activities/spark-dragon/spark-dragon-coloring.jpg";
+import sparkConnectDots from "@/assets/activities/spark-dragon/spark-dragon-connect-dots-medium.jpg";
+import sparkFingerPuppets from "@/assets/activities/spark-dragon/spark-dragon-finger-puppets.jpg";
+import billyColoring from "@/assets/activities/billy-bear/billy-bear-coloring-sheet.jpg";
+// Spark Mask preview uses the file placed at project root/public
+// Note: the file should be moved/copied to public for serving
+const sparkMask = "/Spark's mask - colouring activity.jpg";
 
 const FreeResources = () => {
   const [email, setEmail] = useState("");
@@ -130,6 +140,114 @@ const FreeResources = () => {
               </Card>
             );
           })}
+        </div>
+
+        {/* Activity Preview Section */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-center text-foreground mb-8">
+            Sample Activities from Our Free Packs
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="card-primary group cursor-pointer hover:scale-105 transition-transform">
+              <div className="relative overflow-hidden rounded-xl mb-4">
+                <img 
+                  src={sparkColoring} 
+                  alt="Spark Dragon Coloring Activity"
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute top-2 right-2">
+                  <Badge className="bg-accent text-accent-foreground">FREE</Badge>
+                </div>
+              </div>
+              <h4 className="font-semibold text-foreground mb-2">Dragon Coloring Page</h4>
+              <p className="text-sm text-muted-foreground mb-3">
+                Spark the Dragon coloring activity for creative expression
+              </p>
+              <Badge variant="outline" className="text-primary border-primary/30">
+                Ages 3-8
+              </Badge>
+            </div>
+
+            <div className="card-primary group cursor-pointer hover:scale-105 transition-transform" onClick={() => setSelectedResource("Spark Mask - Free Download")}>
+              <div className="relative overflow-hidden rounded-xl mb-4">
+                <img 
+                  src={sparkMask}
+                  alt="Spark Mask - Free Download"
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute top-2 right-2">
+                  <Badge className="bg-secondary text-secondary-foreground">FREE</Badge>
+                </div>
+              </div>
+              <h4 className="font-semibold text-foreground mb-2">Spark Mask - Free Download</h4>
+              <p className="text-sm text-muted-foreground mb-3">
+                Printable colouring mask for Spark the Dragon
+              </p>
+              <Badge variant="outline" className="text-secondary border-secondary/30">
+                Ages 3-8
+              </Badge>
+            </div>
+
+            <div className="card-primary group cursor-pointer hover:scale-105 transition-transform">
+              <div className="relative overflow-hidden rounded-xl mb-4">
+                <img 
+                  src={sparkConnectDots} 
+                  alt="Spark Dragon Connect the Dots Activity"
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute top-2 right-2">
+                  <Badge className="bg-accent text-accent-foreground">FREE</Badge>
+                </div>
+              </div>
+              <h4 className="font-semibold text-foreground mb-2">Connect the Dots</h4>
+              <p className="text-sm text-muted-foreground mb-3">
+                Number recognition and fine motor skills development
+              </p>
+              <Badge variant="outline" className="text-accent border-accent/30">
+                Ages 4-7
+              </Badge>
+            </div>
+
+            <div className="card-primary group cursor-pointer hover:scale-105 transition-transform">
+              <div className="relative overflow-hidden rounded-xl mb-4">
+                <img 
+                  src={sparkFingerPuppets} 
+                  alt="Spark Dragon Finger Puppets Craft"
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute top-2 right-2">
+                  <Badge className="bg-secondary text-secondary-foreground">FREE</Badge>
+                </div>
+              </div>
+              <h4 className="font-semibold text-foreground mb-2">Finger Puppets</h4>
+              <p className="text-sm text-muted-foreground mb-3">
+                Cut and glue craft for storytelling and role-play
+              </p>
+              <Badge variant="outline" className="text-secondary border-secondary/30">
+                Ages 3-6
+              </Badge>
+            </div>
+
+            <div className="card-primary group cursor-pointer hover:scale-105 transition-transform">
+              <div className="relative overflow-hidden rounded-xl mb-4">
+                <img 
+                  src={billyColoring} 
+                  alt="Billy Bear Coloring Activity"
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute top-2 right-2">
+                  <Badge className="bg-primary text-primary-foreground">FREE</Badge>
+                </div>
+              </div>
+              <h4 className="font-semibold text-foreground mb-2">Billy Bear Coloring</h4>
+              <p className="text-sm text-muted-foreground mb-3">
+                Billy Bear coloring page for creative expression and fun
+              </p>
+              <Badge variant="outline" className="text-primary border-primary/30">
+                Ages 3-8
+              </Badge>
+            </div>
+          </div>
         </div>
 
         {/* Email Signup */}

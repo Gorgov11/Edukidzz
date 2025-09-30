@@ -54,11 +54,11 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm opacity-80">
-              <li><a href="#about" className="hover:opacity-100 transition-opacity">About Dina</a></li>
-              <li><a href="#books" className="hover:opacity-100 transition-opacity">My Books</a></li>
-              <li><a href="#visits" className="hover:opacity-100 transition-opacity">Author Visits</a></li>
-              <li><a href="#resources" className="hover:opacity-100 transition-opacity">Free Resources</a></li>
-              <li><a href="#contact" className="hover:opacity-100 transition-opacity">Contact</a></li>
+              <li><a href="/#about" className="hover:opacity-100 transition-opacity">About Dina</a></li>
+              <li><a href="/#books" className="hover:opacity-100 transition-opacity">My Books</a></li>
+              <li><a href="/#visits" className="hover:opacity-100 transition-opacity">Author Visits</a></li>
+              <li><a href="/#resources" className="hover:opacity-100 transition-opacity">Free Resources</a></li>
+              <li><a href="/#contact" className="hover:opacity-100 transition-opacity">Contact</a></li>
             </ul>
           </div>
 
@@ -66,11 +66,11 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm opacity-80">
-              <li><a href="#" className="hover:opacity-100 transition-opacity">School Visits</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Nursery Sessions</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Morning Play Hub</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Teacher Workshops</a></li>
-              <li><a href="#" className="hover:opacity-100 transition-opacity">Collaborations</a></li>
+              <li><a href="/school-visits" className="hover:opacity-100 transition-opacity">School Visits</a></li>
+              <li><a href="/#sessions" className="hover:opacity-100 transition-opacity">Nursery Sessions</a></li>
+              <li><a href="/#resources" className="hover:opacity-100 transition-opacity">Morning Play Hub</a></li>
+              <li><a href="/#sessions" className="hover:opacity-100 transition-opacity">Teacher Workshops</a></li>
+              <li><a href="/media" className="hover:opacity-100 transition-opacity">Collaborations</a></li>
             </ul>
           </div>
         </div>
@@ -80,9 +80,9 @@ const Footer = () => {
             <div className="flex items-center gap-4 text-sm opacity-80">
               <span>© 2024 Dina O. Nasr. All rights reserved.</span>
               <span>•</span>
-              <a href="#" className="hover:opacity-100 transition-opacity">Privacy Policy</a>
+              <a href="/" className="hover:opacity-100 transition-opacity">Privacy Policy</a>
               <span>•</span>
-              <a href="#" className="hover:opacity-100 transition-opacity">Terms of Service</a>
+              <a href="/" className="hover:opacity-100 transition-opacity">Terms of Service</a>
             </div>
             
             <div className="flex items-center gap-2 text-sm opacity-80">

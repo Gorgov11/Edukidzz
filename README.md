@@ -60,6 +60,22 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## New pages and routes
+
+Two new routes were added:
+
+- `/school-visits` — School Visits information page
+- `/author-visit-details` — Author Visit Details page
+
+Additional route:
+
+- `/media` — Media page (press kit, interviews)
+
+Navigation updates:
+
+- The `Author Visits` menu now has a dropdown with links to these pages on desktop, and nested links in the mobile menu.
+- Main menu updated to: About (About Me, Books, Services), Media, Free Resources, Gallery, Contact.
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/62e6f624-c922-48f4-a132-737973c35a38) and click on Share -> Publish.

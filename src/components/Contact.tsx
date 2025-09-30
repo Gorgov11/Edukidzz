@@ -89,7 +89,7 @@ const Contact = () => {
 
             {/* Services Quick Links */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              <a href="#visits">
+              <a href="/#visits">
                 <Card className="border-primary/20 hover:border-primary/40 transition-colors cursor-pointer">
                   <CardContent className="p-4 text-center">
                     <h5 className="font-semibold text-foreground mb-1">Author Visits</h5>

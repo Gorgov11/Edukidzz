@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Download, Star } from "lucide-react";
-import sparkDragon from "@/assets/spark-dragon.jpg";
-import billyBear from "@/assets/billy-bear.jpg";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import sparkDragonAlt from "@/assets/book-covers/spark-dragon-cover-alt.jpg";
+import billyBearAlt from "@/assets/book-covers/billy-bear-cover-alt.jpg";
 
 const Books = () => {
   return (
@@ -23,11 +24,15 @@ const Books = () => {
           <div className="card-primary group">
             <div className="mb-6">
               <Badge className="bg-secondary text-secondary-foreground mb-4">Latest Release</Badge>
-              <img 
-                src={billyBear} 
-                alt="Billy Bear's Brown Hair book cover" 
-                className="w-full h-64 object-cover rounded-xl mb-6 group-hover:scale-105 transition-transform duration-300"
-              />
+              <div className="rounded-xl overflow-hidden mb-6 group-hover:scale-105 transition-transform duration-300 bg-muted">
+                <AspectRatio ratio={1}>
+                  <img 
+                    src={billyBearAlt} 
+                    alt="Billy Bear's Brown Hair book cover" 
+                    className="w-full h-full object-contain"
+                  />
+                </AspectRatio>
+              </div>
             </div>
             
             <h3 className="text-2xl font-bold text-foreground mb-4">Billy Bear's Brown Hair</h3>
@@ -59,7 +64,7 @@ const Books = () => {
                   Order Now
                 </Button>
               </a>
-              <a href="#resources" className="flex-1">
+              <a href="/#resources" className="flex-1">
                 <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                   <Download className="w-4 h-4 mr-2" />
                   Free Activities
@@ -96,11 +101,15 @@ const Books = () => {
           <div className="card-primary group">
             <div className="mb-6">
               <Badge className="bg-accent text-accent-foreground mb-4">Bestseller</Badge>
-              <img 
-                src={sparkDragon} 
-                alt="Spark the Sparkly Dragon book cover" 
-                className="w-full h-64 object-cover rounded-xl mb-6 group-hover:scale-105 transition-transform duration-300"
-              />
+              <div className="rounded-xl overflow-hidden mb-6 group-hover:scale-105 transition-transform duration-300 bg-muted">
+                <AspectRatio ratio={1}>
+                  <img 
+                    src={sparkDragonAlt} 
+                    alt="Spark the Sparkly Dragon book cover" 
+                    className="w-full h-full object-contain"
+                  />
+                </AspectRatio>
+              </div>
             </div>
             
             <h3 className="text-2xl font-bold text-foreground mb-4">Spark the Sparkly Dragon</h3>
@@ -132,7 +141,7 @@ const Books = () => {
                   Buy Now
                 </Button>
               </a>
-              <a href="#resources" className="flex-1">
+              <a href="/#resources" className="flex-1">
                 <Button variant="outline" className="w-full border-accent text-accent hover:bg-accent hover:text-accent-foreground">
                   <Download className="w-4 h-4 mr-2" />
                   Explore Activities

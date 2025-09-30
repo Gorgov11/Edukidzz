@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, Heart, Users } from "lucide-react";
-import dinaPhoto from "@/assets/dina-author-photo.jpg";
-import sparkDragon from "@/assets/spark-dragon.jpg";
+import dinaPhotoAlt from "@/assets/author-photos/dina-author-photo-alt.jpg";
+import sparkDragonAlt from "@/assets/book-covers/spark-dragon-cover-alt.jpg";
+import sparkColoring from "@/assets/activities/spark-dragon/spark-dragon-coloring.jpg";
 
 const Hero = () => {
   return (
@@ -39,17 +40,17 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <a href="#books">
+              <a href="/#books">
                 <Button className="btn-hero text-lg px-8 py-4">
                   Explore My Books
                 </Button>
               </a>
-              <a href="#visits">
+              <a href="/#visits">
                 <Button className="btn-secondary text-lg px-8 py-4">
                   Book an Author Visit
                 </Button>
               </a>
-              <a href="#resources">
+              <a href="/#resources">
                 <Button variant="outline" className="text-lg px-8 py-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                   Free Activities
                 </Button>
@@ -64,7 +65,7 @@ const Hero = () => {
               <div className="card-primary bg-background/80 backdrop-blur-sm">
                 <div className="flex items-center gap-4">
                   <img 
-                    src={dinaPhoto} 
+                    src={dinaPhotoAlt} 
                     alt="Dina O. Nasr, Children's Author" 
                     className="w-20 h-20 rounded-full object-cover shadow-soft"
                   />
@@ -77,18 +78,45 @@ const Hero = () => {
               </div>
               
               {/* Book Preview */}
-              <a href="#books">
+              <a href="/#books">
                 <div className="card-primary bg-background/80 backdrop-blur-sm cursor-pointer hover:scale-105 transition-transform">
                   <div className="flex items-center gap-4">
-                    <img 
-                      src={sparkDragon} 
-                      alt="Spark the Sparkly Dragon" 
-                      className="w-16 h-16 rounded-lg object-cover"
-                    />
+                    <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted">
+                      <img 
+                        src={sparkDragonAlt} 
+                        alt="Spark the Sparkly Dragon" 
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
                     <div>
                       <p className="text-sm text-muted-foreground">Latest Book</p>
                       <h4 className="font-semibold text-foreground">Spark the Sparkly Dragon</h4>
                       <p className="text-sm text-secondary font-medium">Available Now</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              {/* Activity Preview */}
+              <a href="/#resources">
+                <div className="card-primary bg-background/80 backdrop-blur-sm cursor-pointer hover:scale-105 transition-transform">
+                  <div className="flex items-center gap-4">
+                    <div className="relative">
+                      <div className="w-16 h-16 rounded-lg overflow-hidden bg-muted">
+                        <img 
+                          src={sparkColoring} 
+                          alt="Spark Dragon Coloring Activity" 
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <div className="absolute -top-1 -right-1 w-6 h-6 bg-accent text-accent-foreground rounded-full flex items-center justify-center text-xs font-bold">
+                        FREE
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Free Activity</p>
+                      <h4 className="font-semibold text-foreground">Coloring Pages</h4>
+                      <p className="text-sm text-accent font-medium">Download Now</p>
                     </div>
                   </div>
                 </div>

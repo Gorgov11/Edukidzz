@@ -152,12 +152,12 @@ const AuthorVisits = () => {
               with regional travel available upon request.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#contact">
+              <a href="/#contact">
                 <Button className="btn-hero text-lg px-8 py-4">
                   Book a Visit Now
                 </Button>
               </a>
-              <a href="#contact">
+              <a href="/#contact">
                 <Button variant="outline" className="text-lg px-8 py-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                   Request Information
                 </Button>

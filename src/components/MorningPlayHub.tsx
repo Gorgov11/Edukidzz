@@ -91,7 +91,7 @@ const MorningPlayHub = () => {
                   Register Interest
                 </Button>
               </a>
-              <a href="#contact">
+              <a href="/#contact">
                 <Button variant="outline" className="text-lg px-8 py-4 border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground">
                   Learn More
                 </Button>
