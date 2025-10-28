@@ -77,7 +77,7 @@ const SchoolVisits = () => {
       type: "Half Day",
       duration: "2-3 hours",
       sessions: "2-3 sessions",
-      price: "£200",
+      price: "Upon Request",
       includes: ["Assembly presentation", "Classroom workshop", "Book signing", "Teacher resources"],
       bestValue: false
     },
@@ -85,7 +85,7 @@ const SchoolVisits = () => {
       type: "Full Day",
       duration: "4-6 hours",
       sessions: "4-6 sessions",
-      price: "£350",
+      price: "Upon Request",
       includes: ["Multiple presentations", "Workshops", "Book signing", "Teacher resources", "Follow-up materials"],
       bestValue: true
     },
@@ -93,7 +93,7 @@ const SchoolVisits = () => {
       type: "Virtual Visit",
       duration: "30-45 minutes",
       sessions: "1 session",
-      price: "£75",
+      price: "Upon Request",
       includes: ["Live presentation", "Q&A session", "Digital resources", "Recording available"],
       bestValue: false
     }
@@ -230,9 +230,9 @@ const SchoolVisits = () => {
       {/* Pricing */}
       <section className="container-width section-padding">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Pricing & Packages</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Packages & Pricing</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Flexible pricing options to suit different budgets and requirements
+            Flexible packages tailored to your school's needs and budget
           </p>
         </div>
         
@@ -246,7 +246,7 @@ const SchoolVisits = () => {
               )}
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl">{package_.type}</CardTitle>
-                <div className="text-4xl font-bold text-primary">{package_.price}</div>
+                <div className="text-2xl font-bold text-primary">{package_.price}</div>
                 <CardDescription>{package_.duration} • {package_.sessions}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -259,7 +259,7 @@ const SchoolVisits = () => {
                   ))}
         </ul>
                 <Button className="w-full" variant={package_.bestValue ? "default" : "outline"}>
-                  Choose {package_.type}
+                  Request Quote
                 </Button>
               </CardContent>
             </Card>

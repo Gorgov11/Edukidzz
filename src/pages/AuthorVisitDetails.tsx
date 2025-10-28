@@ -124,7 +124,7 @@ const AuthorVisitDetails = () => {
     {
       type: "Half Day Visit",
       duration: "2-3 hours",
-      price: "£200",
+      price: "Upon Request",
       includes: [
         "2-3 sessions (assembly + workshops)",
         "Book signing time",
@@ -133,15 +133,15 @@ const AuthorVisitDetails = () => {
         "Follow-up support"
       ],
       addons: [
-        "Additional session: +£50",
-        "Extended book signing: +£25",
-        "Teacher training session: +£75"
+        "Additional session: Price on request",
+        "Extended book signing: Price on request",
+        "Teacher training session: Price on request"
       ]
     },
     {
       type: "Full Day Visit",
       duration: "4-6 hours",
-      price: "£350",
+      price: "Upon Request",
       includes: [
         "4-6 sessions throughout the day",
         "Extended book signing",
@@ -151,15 +151,15 @@ const AuthorVisitDetails = () => {
         "Digital resources for classroom use"
       ],
       addons: [
-        "Parent/teacher evening session: +£100",
-        "Staff training workshop: +£125",
-        "Custom curriculum materials: +£50"
+        "Parent/teacher evening session: Price on request",
+        "Staff training workshop: Price on request",
+        "Custom curriculum materials: Price on request"
       ]
     },
     {
       type: "Virtual Visit",
       duration: "30-45 minutes",
-      price: "£75",
+      price: "Upon Request",
       includes: [
         "Live interactive presentation",
         "Q&A session",
@@ -168,9 +168,9 @@ const AuthorVisitDetails = () => {
         "Follow-up activities"
       ],
       addons: [
-        "Extended Q&A: +£25",
-        "Multiple class sessions: +£50 each",
-        "Custom digital resources: +£30"
+        "Extended Q&A: Price on request",
+        "Multiple class sessions: Price on request",
+        "Custom digital resources: Price on request"
       ]
     }
   ];
@@ -287,9 +287,9 @@ const AuthorVisitDetails = () => {
       {/* Pricing Details */}
       <section className="container-width section-padding">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Detailed Pricing</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Packages & Pricing</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Transparent pricing with optional add-ons to customize your visit
+            Custom packages with transparent pricing tailored to your needs
           </p>
         </div>
         
@@ -298,7 +298,7 @@ const AuthorVisitDetails = () => {
             <Card key={index} className="relative">
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl">{package_.type}</CardTitle>
-                <div className="text-4xl font-bold text-primary">{package_.price}</div>
+                <div className="text-2xl font-bold text-primary">{package_.price}</div>
                 <CardDescription>{package_.duration}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -314,7 +314,7 @@ const AuthorVisitDetails = () => {
                   </ul>
                 </div>
                 
-                <div>
+          <div>
                   <h4 className="font-semibold mb-3 text-blue-700">Optional Add-ons:</h4>
                   <ul className="space-y-2">
                     {package_.addons.map((addon, addonIndex) => (
@@ -327,7 +327,7 @@ const AuthorVisitDetails = () => {
                 </div>
                 
                 <Button className="w-full" variant={index === 1 ? "default" : "outline"}>
-                  Choose {package_.type}
+                  Request Quote
                 </Button>
               </CardContent>
             </Card>
