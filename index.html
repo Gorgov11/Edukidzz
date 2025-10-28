@@ -23,6 +23,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Fix for custom element redefinition error -->
+    <script>
+      // Prevent custom element redefinition errors
+      if (typeof window !== 'undefined') {
+        const originalDefine = window.customElements.define;
+        window.customElements.define = function(name, constructor, options) {
+          if (!window.customElements.get(name)) {
+            originalDefine.call(this, name, constructor, options);
+          } else {
+            console.warn(`Custom element '${name}' is already defined. Skipping redefinition.`);
+          }
+        };
+        
+        // Catch and suppress specific custom element errors
+        window.addEventListener('error', function(event) {
+          if (event.message && event.message.includes('custom element with name') && event.message.includes('has already been defined')) {
+            console.warn('Suppressed custom element redefinition error:', event.message);
+            event.preventDefault();
+            return false;
+          }
+        });
+        
+        // Also catch unhandled promise rejections
+        window.addEventListener('unhandledrejection', function(event) {
+          if (event.reason && event.reason.message && event.reason.message.includes('custom element with name') && event.reason.message.includes('has already been defined')) {
+            console.warn('Suppressed custom element redefinition promise rejection:', event.reason.message);
+            event.preventDefault();
+          }
+        });
+      }
+    </script>
   </head>
 
   <body>
