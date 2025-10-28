@@ -212,11 +212,11 @@ const Media = () => {
             bloggers, and media professionals covering children's literature and education.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="btn-hero">
+            <Button size="lg" className="btn-hero" disabled>
               <Download className="w-4 h-4 mr-2" />
-              Download Press Kit
+              Coming Soon
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" disabled>
               <ExternalLink className="w-4 h-4 mr-2" />
               Contact Media Team
             </Button>
@@ -247,9 +247,9 @@ const Media = () => {
                 </CardHeader>
                 <CardContent className="text-center">
                   {item.download && (
-                    <Button variant="outline" size="sm" className="w-full">
+                    <Button variant="outline" size="sm" className="w-full" disabled>
                       <Download className="w-4 h-4 mr-2" />
-                      Download
+                      Coming Soon
                     </Button>
                   )}
                 </CardContent>
@@ -300,9 +300,9 @@ const Media = () => {
                   <p className="text-muted-foreground mb-4">{interview.description}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground">{interview.date}</span>
-                    <Button variant="outline" size="sm">
+                    <Button variant="outline" size="sm" disabled>
                       <Play className="w-4 h-4 mr-2" />
-                      Watch/Listen
+                      Coming Soon
                     </Button>
                   </div>
                 </CardContent>
@@ -350,9 +350,9 @@ const Media = () => {
                   <p className="text-muted-foreground mb-4">{article.excerpt}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground">{article.date}</span>
-                    <Button variant="outline" size="sm">
+                    <Button variant="outline" size="sm" disabled>
                       <ExternalLink className="w-4 h-4 mr-2" />
-                      Read More
+                      Coming Soon
                     </Button>
                   </div>
                 </CardContent>
@@ -389,9 +389,9 @@ const Media = () => {
               <CardContent className="p-4">
                 <h3 className="font-semibold text-foreground mb-2">{photo.title}</h3>
                 <p className="text-sm text-muted-foreground mb-4">{photo.description}</p>
-                <Button variant="outline" size="sm" className="w-full">
+                <Button variant="outline" size="sm" className="w-full" disabled>
                   <Download className="w-4 h-4 mr-2" />
-                  Download
+                  Coming Soon
                 </Button>
               </CardContent>
             </Card>
@@ -427,9 +427,9 @@ const Media = () => {
                     </Badge>
                   </div>
                   <p className="text-muted-foreground mb-4">{social.description}</p>
-                  <Button variant="outline" size="sm" className="w-full">
+                  <Button variant="outline" size="sm" className="w-full" disabled>
                     <ExternalLink className="w-4 h-4 mr-2" />
-                    Follow
+                    Coming Soon
                   </Button>
                 </CardContent>
               </Card>
@@ -448,13 +448,13 @@ const Media = () => {
             literature and educational topics.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="btn-hero">
+            <Button size="lg" className="btn-hero" disabled>
               <Heart className="w-4 h-4 mr-2" />
-              Contact Media Team
+              Coming Soon
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" disabled>
               <Calendar className="w-4 h-4 mr-2" />
-              Schedule Interview
+              Coming Soon
             </Button>
           </div>
           

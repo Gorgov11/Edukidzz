@@ -124,7 +124,7 @@ const FreeResources = () => {
                   <div className="space-y-2">
                     <Badge variant="outline" className="w-full justify-center py-2">
                       <Download className="w-4 h-4 mr-2" />
-                      Free Download
+                      Email Required
                     </Badge>
                     <Button 
                       variant="outline" 

@@ -9,10 +9,9 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const socialLinks = [
-    { icon: Instagram, href: "https://instagram.com/dinaauthor", label: "Instagram" },
-    { icon: Facebook, href: "https://facebook.com/dinaauthor", label: "Facebook" },
-    { icon: Youtube, href: "https://youtube.com/@dinaauthor", label: "YouTube" },
-    { icon: Mail, href: "mailto:hello@dinaauthor.com", label: "Email" }
+    { icon: Instagram, href: "https://www.instagram.com/edukidzz/", label: "Instagram" },
+    { icon: Facebook, href: "https://www.facebook.com/p/edukidzz-100064141237304/", label: "Facebook" },
+    { icon: Mail, href: "mailto:edukidzzbooks@gmail.com", label: "Email" }
   ];
 
   return (
