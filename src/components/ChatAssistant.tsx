@@ -17,7 +17,7 @@ const ChatAssistant = () => {
     {
       role: "assistant",
       content:
-        "Hi! I’m your assistant. I can help with books, resources, author visits, and contact info. What would you like to know?",
+        "Hi! I’m your assistant. For any bookings or requests, email edukidzzbooks@gmail.com or call +971 50 566 1809. I can also help with books, resources, author visits, and more—what would you like to know?",
     },
   ]);
 
@@ -95,6 +95,9 @@ const ChatAssistant = () => {
             <div ref={bottomRef} />
           </div>
 
+          <div className="px-3 pt-2 pb-1 border-t border-border text-xs text-muted-foreground">
+            Prefer direct contact? Email <a className="text-primary" href="mailto:edukidzzbooks@gmail.com">edukidzzbooks@gmail.com</a> or call <a className="text-primary" href="tel:+971505661809">+971 50 566 1809</a>.
+          </div>
           <div className="p-3 border-t border-border flex gap-2">
             <Input
               placeholder={loading ? "Thinking..." : "Ask about books, visits, resources..."}

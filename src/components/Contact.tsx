@@ -65,6 +65,17 @@ const Contact = () => {
               </div>
 
               <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-6 h-6 text-secondary" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-1">Phone / WhatsApp</h4>
+                  <p className="text-muted-foreground mb-1">Call or message for any requests</p>
+                  <a href="tel:+971505661809" className="text-secondary hover:underline">+971 50 566 1809</a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-accent" />
                 </div>

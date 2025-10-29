@@ -36,8 +36,13 @@ export const useEmailActions = () => {
   }) => {
     setIsSubmitting(true);
     try {
+      const payload = {
+        ...formData,
+        recipient: 'edukidzzbooks@gmail.com',
+      };
+
       const { data, error } = await supabase.functions.invoke('contact-form', {
-        body: formData
+        body: payload
       });
 
       if (error) throw error;
@@ -46,6 +51,12 @@ export const useEmailActions = () => {
       return { success: true };
     } catch (error: any) {
       console.error('Contact form error:', error);
+      // Fallback: open an email draft so the user can still reach out
+      try {
+        const subject = encodeURIComponent(formData.subject || 'Website Inquiry');
+        const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
+        window.location.href = `mailto:edukidzzbooks@gmail.com?subject=${subject}&body=${body}`;
+      } catch {}
       return { success: false, error };
     } finally {
       setIsSubmitting(false);

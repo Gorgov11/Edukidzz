@@ -7,9 +7,9 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import SchoolVisits from "./pages/SchoolVisits";
-import AuthorVisitDetails from "./pages/AuthorVisitDetails";
+import AuthorVisits from "./pages/AuthorVisits";
 import Media from "./pages/Media";
+import AuthorVisitsHub from "./pages/AuthorVisitsHub";
 
 const queryClient = new QueryClient();
 
@@ -23,8 +23,7 @@ const App = () => (
           <Sonner />
           <Routes>
             <Route path="/" element={<Index />} />
-            <Route path="/school-visits" element={<SchoolVisits />} />
-            <Route path="/author-visit-details" element={<AuthorVisitDetails />} />
+            <Route path="/author-visits" element={<AuthorVisits />} />
             <Route path="/media" element={<Media />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

@@ -39,13 +39,7 @@ const Header = () => {
                 <a href="/#sessions" className="block px-4 py-2 hover:bg-muted/70 transition-colors">Services</a>
               </div>
             </div>
-            <div className="relative group">
-              <span className="text-foreground/90 hover:text-accent font-semibold text-sm lg:text-[15px] tracking-wide transition-colors cursor-pointer">Author Visits</span>
-              <div className="absolute left-0 top-full invisible opacity-0 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100 bg-popover text-popover-foreground border border-border rounded-md shadow-lg min-w-[200px] transition-opacity">
-                <Link to="/school-visits" className="block px-4 py-2 hover:bg-muted/70 transition-colors">School Visits</Link>
-                <Link to="/author-visit-details" className="block px-4 py-2 hover:bg-muted/70 transition-colors">Visit Details</Link>
-              </div>
-            </div>
+            <Link to="/author-visits" className="text-foreground/90 hover:text-accent font-semibold text-sm lg:text-[15px] tracking-wide transition-colors">Author Visits</Link>
             <Link to="/media" className="text-foreground/90 hover:text-accent font-semibold text-sm lg:text-[15px] tracking-wide transition-colors">Media</Link>
             <a href="/#resources" className="text-foreground/90 hover:text-accent font-semibold text-sm lg:text-[15px] tracking-wide transition-colors">Free Resources</a>
             <a href="/#gallery" className="text-foreground/90 hover:text-accent font-semibold text-sm lg:text-[15px] tracking-wide transition-colors">Gallery</a>
@@ -107,13 +101,7 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className="space-y-1">
-                <span className="text-foreground font-semibold text-base">Author Visits</span>
-                <div className="ml-3 flex flex-col">
-                  <Link to="/school-visits" className="text-muted-foreground hover:text-primary transition-colors" onClick={toggleMenu}>School Visits</Link>
-                  <Link to="/author-visit-details" className="text-muted-foreground hover:text-primary transition-colors" onClick={toggleMenu}>Visit Details</Link>
-                </div>
-              </div>
+              <Link to="/author-visits" className="text-foreground font-semibold text-base hover:text-primary transition-colors" onClick={toggleMenu}>Author Visits</Link>
 
               <Link to="/media" className="text-foreground font-semibold text-base hover:text-primary transition-colors" onClick={toggleMenu}>Media</Link>
               <a href="/#resources" className="text-foreground font-semibold text-base hover:text-primary transition-colors" onClick={toggleMenu}>Free Resources</a>

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AuthorVisitsGallery from "@/components/AuthorVisitsGallery";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -348,6 +349,9 @@ const AuthorVisitDetails = () => {
           </div>
         </div>
       </section>
+
+      {/* Author Visits Gallery */}
+      <AuthorVisitsGallery />
 
       {/* FAQ */}
       <section className="container-width section-padding bg-muted/30">
